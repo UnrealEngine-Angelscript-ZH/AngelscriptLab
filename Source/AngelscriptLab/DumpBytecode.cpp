@@ -5,11 +5,7 @@
 
 #include <as_scriptengine.h>
 
-// #include "CoreMinimal.h"
 #include "AngelscriptManager.h"
-
-
-PRAGMA_DISABLE_OPTIMIZATION
 
 void PrintBytecode(asIScriptFunction* func);
 
@@ -28,7 +24,6 @@ static void DumpAngelscriptBytecode(const TArray<FString>& Args, UWorld* InWorld
 		UE_LOG(LogTemp, Error, TEXT("Usage: Dump.Angelscript.Bytecode [ModuleName] [FunctionName]"));
 		return;
 	}
-
 	
 	// 遍历所有模块
 	auto modnum = asEngine->GetModuleCount();
@@ -321,7 +316,6 @@ void PrintBytecode(asIScriptFunction* func)
 	}
 }
 
-PRAGMA_ENABLE_OPTIMIZATION
 FAutoConsoleCommandWithWorldAndArgs DumpBytecodeCommand(
 	TEXT("Dump.Angelscript.Bytecode"),
 	TEXT("Dump Angelscript bytecode for debugging\n"
