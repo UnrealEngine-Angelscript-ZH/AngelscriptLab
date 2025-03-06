@@ -295,6 +295,30 @@ FString GetInstrDebugString(asDWORD* BC, asIScriptFunction* func)
 }
 
 
+FString GetBytecode(asIScriptFunction* func)
+{
+	FString Result;
+	auto engine = static_cast<asCScriptEngine*>(func->GetEngine());
+	// Get the script byte code
+	asUINT length;
+	asDWORD* byteCode = func->GetByteCode(&length);
+	asDWORD* end = byteCode + length;
+
+	while (byteCode < end)
+	{
+		// Determine the instruction
+		asEBCInstr op = asEBCInstr(*(asBYTE*)byteCode);
+		auto debug = GetInstrDebugString(byteCode, func);
+		Result += debug + TEXT("\n");
+		// UE_LOG(LogTemp, Log, TEXT("%s"), *debug);
+
+		// Move to next instruction
+		byteCode += asBCTypeSize[asBCInfo[op].type];
+	}
+
+	return Result;
+}
+
 
 void PrintBytecode(asIScriptFunction* func)
 {

@@ -37,3 +37,10 @@ class AExampleFormatString : AActor
 		Print(f"{ESlateVisibility::Collapsed :n}"); // "Collapsed"
 	}
 };
+
+UFUNCTION()
+void TestPrint()
+{
+	Print(f"Hexadecimal: {20 :#x}"); // 0x14
+}
+
