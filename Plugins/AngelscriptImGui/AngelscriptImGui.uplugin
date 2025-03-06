@@ -1,18 +1,17 @@
 {
-	"FileVersion": 3,
+	"FileVersion": 1,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "AngelscriptImGui",
-	"Description": "",
-	"Category": "Other",
-	"CreatedBy": "",
-	"CreatedByURL": "",
+	"FriendlyName": "ImGui support for Angelscript",
+	"Description": "Adds scripting support for UnrealImGui to Angelscript.",
+	"Category": "Scripting",
+	"CreatedBy": "Envar Games AB",
+	"CreatedByURL": "https://github.com/EnvarStudio/AngelscriptImGui",
 	"DocsURL": "",
 	"MarketplaceURL": "",
-	"SupportURL": "",
-	"CanContainContent": true,
+	"EnabledByDefault": true,
+	"CanContainContent": false,
 	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
 		{
@@ -23,11 +22,11 @@
 	],
 	"Plugins": [
 		{
-			"Name": "Angelscript",
+			"Name": "ImGui",
 			"Enabled": true
 		},
 		{
-			"Name": "ImGui",
+			"Name": "Angelscript",
 			"Enabled": true
 		}
 	]

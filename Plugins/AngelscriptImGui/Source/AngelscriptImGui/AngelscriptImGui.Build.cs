@@ -1,54 +1,29 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright Envar Games AB. All Rights Reserved.
 
+using System.IO;
 using UnrealBuildTool;
 
 public class AngelscriptImGui : ModuleRules
 {
 	public AngelscriptImGui(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+	{        
+		bLegacyPublicIncludePaths = false;
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				// ... add public include paths required here ...
+		PrivateIncludePaths.AddRange(new string[]
+		{
+			ModuleDirectory + "/Private",
+		});
 
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				// ... add other private include paths required here ...
-			}
-			);
-			
-		
-		PublicDependencyModuleNames.AddRange(
-			new string[]
-			{
-				"Core",
-				// ... add other public dependencies that you statically link with here ...
-			}
-			);
-			
-		
-		PrivateDependencyModuleNames.AddRange(
-			new string[]
-			{
-				"CoreUObject",
-				"Engine",
-				"Slate",
-				"SlateCore", "AngelscriptCode", "ImGui"
-				// ... add private dependencies that you statically link with here ...	
-			}
-			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
-			}
-			);
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core",
+			"CoreUObject",
+			"Engine",
+			"InputCore",
+			"Slate",
+			"AngelscriptCode",
+			"ImGui",
+		});
 	}
 }
