@@ -653,6 +653,21 @@ FAngelscriptBinds::FBind Bind_ImGui_Windows(FAngelscriptBinds::EOrder::Late, []
 	{
 		ImGui::EndChild();
 	});
+
+	// CollapsingHeader 绑定
+	FAngelscriptBinds::BindGlobalFunction(
+		"bool CollapsingHeader(const FString& Label, EImGuiTreeNodeFlags Flags = EImGuiTreeNodeFlags::None)",
+		[](const FString& Label, const ImGuiTreeNodeFlags Flags) -> bool
+		{
+			return ImGui::CollapsingHeader(ToImGui(Label), Flags);
+		});
+
+	// 支持默认参数的版本
+	FAngelscriptBinds::BindGlobalFunction("bool CollapsingHeader(const FString& Label)",
+	                                      [](const FString& Label) -> bool
+	                                      {
+		                                      return ImGui::CollapsingHeader(ToImGui(Label));
+	                                      });
 });
 
 FAngelscriptBinds::FBind Bind_ImGui_Window_Utilities(FAngelscriptBinds::EOrder::Late, []
