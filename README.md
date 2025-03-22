@@ -32,9 +32,11 @@ Dump.Angelscript.Bytecode
 
 ![image-20250307160927420](README/image-20250307160927420.png)
 
+### EnumToString
 
+![image-20250322225157206](README/image-20250322225157206.png)
 
-
+![image-20250322225218275](README/image-20250322225218275.png)
 
 ****
 
