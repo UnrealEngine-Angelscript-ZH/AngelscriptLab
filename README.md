@@ -40,3 +40,6 @@ Dump.Angelscript.Bytecode
 
 ****
 
+[github.com/IDI-Systems/UnrealImGui](https://github.com/IDI-Systems/UnrealImGui)
+
+[EnvarStudio/AngelscriptImGui: Angelscript binding for ImGui.](https://github.com/EnvarStudio/AngelscriptImGui/tree/main)
